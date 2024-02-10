@@ -5,11 +5,16 @@
     <% if (is_post()) { %>
       <%- partial('_partial/post/actions_desktop') %>
     <% } %>
-    <div class="content index py4 <%= is_home() ? 'h-card' : '' %>">
+    <div class="content index content_shell <%= is_home() ? 'h-card' : '' %>">
         <% if (!is_post()) { %>
+          <!-- <div class="home_css"> -->
           <%- partial('_partial/header') %>
         <% } %>
         <%- body %>
+        <!-- <% if (!is_post()) { %>
+          </div>
+        <% } %> -->
+
         <% if (is_post()) { %>
           <%- partial('_partial/post/actions_mobile') %>
         <% } %>
